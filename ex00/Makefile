@@ -6,18 +6,18 @@
 #    By: sshahary <sshahary@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/02 04:06:03 by sshahary          #+#    #+#              #
-#    Updated: 2024/08/02 04:08:48 by sshahary         ###   ########.fr        #
+#    Updated: 2024/08/02 22:39:36 by sshahary         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp
+SRCS = main.cpp ScalarConverter.cpp
 OBJS = $(SRCS:.cpp=.o)
-DEPS = 
+DEPS = ScalarConverter.hpp
 
-TARGET = animals
+TARGET = convert
 
 all: $(TARGET)
 
