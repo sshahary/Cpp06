@@ -6,7 +6,7 @@
 /*   By: sshahary <sshahary@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 15:53:49 by sshahary          #+#    #+#             */
-/*   Updated: 2024/08/03 15:57:11 by sshahary         ###   ########.fr       */
+/*   Updated: 2024/08/03 16:15:07 by sshahary         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 Base* generate()
 {
-	std::srand(static_cast<unsigned int>(std::time(nullptr)));
+	std::srand(static_cast<unsigned int>(std::time(NULL)));
 	int random = std::rand() % 3;
 
 	switch (random)
@@ -33,7 +33,7 @@ Base* generate()
 		case 2:
 			return new C();
 		default:
-			return nullptr;
+			return NULL;
 	}
 }
 
@@ -55,19 +55,24 @@ void identify(Base& p)
 	{
 		(void)dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
+		return;
 	}
-	catch (std::bad_cast&) {}
+	catch (...) {}
 	try
 	{
 		(void)dynamic_cast<B&>(p);
 		std::cout << "B" << std::endl;
+		return;
 	}
-	catch (std::bad_cast&) {}
+	catch (...) {}
 	try
 	{
 		(void)dynamic_cast<C&>(p);
 		std::cout << "C" << std::endl;
+		return;
 	}
-	catch (std::bad_cast&) {}
+	catch (...) {}
+
+	std::cout << "Unknown" << std::endl;
 }
 
