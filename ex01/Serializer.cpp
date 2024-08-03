@@ -6,11 +6,16 @@
 /*   By: sshahary <sshahary@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 00:28:12 by sshahary          #+#    #+#             */
-/*   Updated: 2024/08/03 00:28:27 by sshahary         ###   ########.fr       */
+/*   Updated: 2024/08/03 18:00:56 by sshahary         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
+
+Serializer::Serializer() {}
+Serializer::~Serializer() {}
+Serializer::Serializer(const Serializer&) {}
+Serializer& Serializer::operator=(const Serializer&) { return *this; }
 
 uintptr_t Serializer::serialize(Data* ptr)
 {
